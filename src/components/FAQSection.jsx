@@ -45,9 +45,9 @@ const FAQItem = ({ faq, isOpen, onClick }) => {
     <div className="border-b border-white/5 last:border-0">
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between py-6 text-left group"
+        className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="text-white font-medium text-lg pr-4 group-hover:text-gray-300 transition-colors">
+        <span className="text-white font-medium text-sm md:text-base pr-4 group-hover:text-gray-300 transition-colors">
           {faq.question}
         </span>
         <motion.div

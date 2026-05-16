@@ -75,7 +75,7 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Content Container */}
-      <div className="max-w-[650px] ml-[8%] relative z-10 flex flex-col justify-center md:ml-[20%] max-md:ml-0 max-md:px-6">
+      <div className="w-full max-w-[650px] mx-auto px-6 md:ml-[12%] md:mx-0 relative z-10 flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

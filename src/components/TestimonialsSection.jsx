@@ -46,8 +46,7 @@ const TestimonialsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const visibleCount = 3;
-  const maxIndex = testimonials.length - visibleCount;
+  const maxIndex = testimonials.length - 1;
 
   const next = () => setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
   const prev = () => setCurrentIndex((prev) => Math.max(prev - 1, 0));
@@ -76,19 +75,16 @@ const TestimonialsSection = () => {
 
         {/* Testimonials Carousel */}
         <div className="relative overflow-hidden">
-          <motion.div
+          <div
             className="flex gap-6 transition-transform duration-500"
             style={{
-              transform: `translateX(-${currentIndex * (100 / visibleCount)}%)`,
+              transform: `translateX(calc(-${currentIndex} * (100% / 3 + 0.5rem)))`,
             }}
           >
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="min-w-[calc(100%-1.5rem)] sm:min-w-[calc(50%-0.75rem)] lg:min-w-[calc(33.333%-1rem)] glass-card p-8 flex flex-col"
+                className="min-w-full sm:min-w-[calc(50%-0.75rem)] lg:min-w-[calc(33.333%-1rem)] glass-card p-6 md:p-8 flex flex-col flex-shrink-0"
               >
                 <Quote className="w-8 h-8 text-white/10 mb-4" />
                 <p className="text-gray-400 leading-relaxed mb-6 flex-1">
@@ -117,9 +113,9 @@ const TestimonialsSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Navigation */}

@@ -1,5 +1,3 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { MapPin } from "lucide-react";
 
 const countries = [
@@ -62,22 +60,14 @@ const countries = [
 ];
 
 const CountriesSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section
-      id="countries"
-      className="section-padding bg-black relative"
-      ref={ref}
-    >
+    <section id="countries" className="section-padding bg-black relative">
       <div className="container-custom">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+        <div
+          data-aos="fade-up"
+          data-aos-duration="600"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="text-sm text-gray-500 uppercase tracking-widest mb-4 block">
             Destinations
@@ -85,19 +75,19 @@ const CountriesSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold font-['Poppins'] mb-4">
             Countries <span className="gradient-text">We Serve</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
             Immigration support for top destinations around the world with
             proven track records of successful applications.
           </p>
-        </motion.div>
+        </div>
         {/* Countries Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {countries.map((country, index) => (
-            <motion.div
+            <div
               key={country.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
+              data-aos="fade-up"
+              data-aos-duration="500"
+              data-aos-delay={index * 70}
               className="group relative aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer"
             >
               {/* Background Image */}
@@ -118,15 +108,15 @@ const CountriesSection = () => {
               </div>
 
               {/* Content */}
-              <div className="relative h-full flex flex-col justify-end p-6">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
+              <div className="relative h-full flex flex-col justify-end p-3 md:p-6">
+                <div className="space-y-1 md:space-y-3">
+                  <div className="hidden md:flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-white/80" />
                     <span className="text-white/80 text-sm font-medium">
                       {country.tagline}
                     </span>
                   </div>
-                  <h3 className="text-white font-bold text-2xl mb-2">
+                  <h3 className="text-white font-bold text-base md:text-xl mb-1 md:mb-2">
                     {country.name}
                   </h3>
                   <div className="flex items-center justify-between">
@@ -139,7 +129,7 @@ const CountriesSection = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

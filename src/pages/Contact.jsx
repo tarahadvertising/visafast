@@ -105,12 +105,12 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
             <div data-aos="fade-right" data-aos-duration="600">
-              <h2 className="text-3xl font-bold font-['Poppins'] mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold font-['Poppins'] mb-6">
                 Send Us a Message
               </h2>
               <form
                 onSubmit={handleSubmit}
-                className="glass-card p-8 space-y-5"
+                className="glass-card p-5 md:p-8 space-y-5"
               >
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
@@ -200,7 +200,7 @@ const Contact = () => {
               data-aos-duration="600"
               className="space-y-6"
             >
-              <h2 className="text-3xl font-bold font-['Poppins'] mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold font-['Poppins'] mb-6">
                 Visit Our Office
               </h2>
               {/* Google Map */}

@@ -71,7 +71,7 @@ const ProcessSection = () => {
         {/* Process Grid */}
         <div className="max-w-6xl mx-auto">
           {/* First Row - 3 Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
             {steps.slice(0, 3).map((step, index) => (
               <motion.div
                 key={step.title}
@@ -147,7 +147,7 @@ const ProcessSection = () => {
           </div>
 
           {/* Second Row - 2 Cards (Centered) */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-2xl mx-auto">
             {steps.slice(3, 5).map((step, index) => (
               <motion.div
                 key={step.title}
